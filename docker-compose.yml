@@ -9,8 +9,7 @@ services:
     ports:
       - "3001:3001"
     env_file:
-      - path: apps/web/.env
-        required: false
+      - apps/web/.env
     environment:
       BETTER_AUTH_URL: http://localhost:3001
       CORS_ORIGIN: http://localhost:3001
