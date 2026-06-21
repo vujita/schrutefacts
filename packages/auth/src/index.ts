@@ -14,7 +14,14 @@ export function createAuth() {
 
       schema: schema,
     }),
-    trustedOrigins: [env.CORS_ORIGIN],
+    trustedOrigins: [
+      env.CORS_ORIGIN,
+      "https://schrutefacts-web.vercel.app",
+      "https://schrutefacts.com",
+      "https://www.schrutefacts.com",
+      // Covers dynamic preview deployment URLs injected by Vercel per-deployment
+      ...(process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : []),
+    ],
     emailAndPassword: {
       enabled: true,
     },
