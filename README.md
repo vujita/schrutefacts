@@ -80,6 +80,9 @@ If you want to add app-specific blocks instead of shared primitives, run the sha
 - Start: pnpm run docker:up
 - Logs: pnpm run docker:logs
 - Stop: pnpm run docker:down
+- Wipe local Postgres data: pnpm run db:clean (or pnpm run docker:clean for the full stack)
+
+Postgres data is stored in `.data/postgres` (gitignored). Delete that folder or run a clean script to reset the database.
 
 Environment variables are read from each app's `.env` file (baked into web builds for public variables) and overridden in `docker-compose.yml` for container networking.
 
@@ -115,3 +118,5 @@ schrutefacts/
 - `pnpm run docker:up`: Build and start the Docker Compose stack
 - `pnpm run docker:logs`: Tail logs from the Docker Compose stack
 - `pnpm run docker:down`: Stop the Docker Compose stack
+- `pnpm run db:clean`: Stop Postgres and delete `.data/postgres`
+- `pnpm run docker:clean`: Stop the stack and delete `.data/postgres`

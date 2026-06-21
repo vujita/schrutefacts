@@ -29,13 +29,10 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - schrutefacts_postgres_data:/var/lib/postgresql
+      - ./.data/postgres:/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
     restart: unless-stopped
-
-volumes:
-  schrutefacts_postgres_data:
