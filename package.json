@@ -32,10 +32,10 @@
   },
   "devDependencies": {
     "@schrutefacts/config": "workspace:*",
-    "@types/node": "^22.13.14",
-    "oxfmt": "^0.53.0",
-    "oxlint": "^1.68.0",
-    "turbo": "^2.9.16",
+    "@types/node": "22.13.14",
+    "oxfmt": "0.53.0",
+    "oxlint": "1.68.0",
+    "turbo": "2.9.16",
     "typescript": "catalog:"
   },
   "packageManager": "pnpm@10.24.0"
