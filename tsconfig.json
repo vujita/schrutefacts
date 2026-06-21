@@ -1,0 +1,3 @@
+{
+  "extends": "@schrutefacts/config/tsconfig.base.json"
+}

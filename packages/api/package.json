@@ -1,0 +1,29 @@
+{
+  "name": "@schrutefacts/api",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@schrutefacts/auth": "workspace:*",
+    "@schrutefacts/db": "workspace:*",
+    "@schrutefacts/env": "workspace:*",
+    "@trpc/client": "catalog:",
+    "@trpc/server": "catalog:",
+    "@types/pg": "catalog:",
+    "dotenv": "catalog:",
+    "drizzle-orm": "catalog:",
+    "next": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@schrutefacts/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

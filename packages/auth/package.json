@@ -1,0 +1,24 @@
+{
+  "name": "@schrutefacts/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@schrutefacts/db": "workspace:*",
+    "@schrutefacts/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@schrutefacts/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}
