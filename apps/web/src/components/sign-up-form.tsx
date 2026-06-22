@@ -52,8 +52,8 @@ export default function SignUpForm({ onSwitchToSignIn }: { onSwitchToSignIn: () 
   }
 
   return (
-    <div className="mx-auto w-full mt-10 max-w-md p-6">
-      <h1 className="mb-6 text-center text-3xl font-bold">Create Account</h1>
+    <div className="w-full border-2 border-foreground bg-card p-6">
+      <h1 className="mb-6 font-brand text-2xl font-bold uppercase tracking-wide">Create Account</h1>
 
       <form
         onSubmit={(e) => {
@@ -143,11 +143,7 @@ export default function SignUpForm({ onSwitchToSignIn }: { onSwitchToSignIn: () 
       </form>
 
       <div className="mt-4 text-center">
-        <Button
-          variant="link"
-          onClick={onSwitchToSignIn}
-          className="text-indigo-600 hover:text-indigo-800"
-        >
+        <Button variant="link" onClick={onSwitchToSignIn}>
           Already have an account? Sign In
         </Button>
       </div>
