@@ -25,14 +25,23 @@ export default function UserMenu() {
   if (!session) {
     return (
       <Link href="/login">
-        <Button variant="outline">Sign In</Button>
+        <Button variant="outline" className="text-primary-foreground border-primary-foreground bg-transparent hover:bg-primary-foreground/15">
+          Sign In
+        </Button>
       </Link>
     );
   }
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
+      <DropdownMenuTrigger
+        render={
+          <Button
+            variant="outline"
+            className="text-primary-foreground border-primary-foreground bg-transparent hover:bg-primary-foreground/15"
+          />
+        }
+      >
         {session.user.name}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-card">
