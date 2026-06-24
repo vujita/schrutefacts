@@ -12,93 +12,91 @@
 /* Dark:  Night at Schrute Farms – deep forest with moonlit highlights          */
 
 :root {
-  /* Light warm cream – nearly white but inviting */
-  --background: oklch(0.985 0.016 88);
-  --foreground: oklch(0.11 0.018 50);
+  /* Warm off-white – easy on the eyes */
+  --background: oklch(0.975 0.010 85);
+  --foreground: oklch(0.18 0.015 50);
 
-  --card: oklch(0.99 0.010 88);
-  --card-foreground: oklch(0.11 0.018 50);
+  --card: oklch(0.985 0.008 85);
+  --card-foreground: oklch(0.18 0.015 50);
 
-  --popover: oklch(0.99 0.010 88);
-  --popover-foreground: oklch(0.11 0.018 50);
+  --popover: oklch(0.985 0.008 85);
+  --popover-foreground: oklch(0.18 0.015 50);
 
-  /* Primary: vivid Schrute Farms forest green */
-  --primary: oklch(0.35 0.16 145);
-  --primary-foreground: oklch(0.985 0.016 88);
+  /* Primary: muted Schrute Farms green – sage, not neon */
+  --primary: oklch(0.40 0.10 145);
+  --primary-foreground: oklch(0.975 0.010 85);
 
-  /* Secondary: punchy mustard yellow – PostHog energy */
-  --secondary: oklch(0.88 0.19 90);
-  --secondary-foreground: oklch(0.11 0.018 50);
+  /* Secondary: soft warm straw – not mustard-blast */
+  --secondary: oklch(0.90 0.08 88);
+  --secondary-foreground: oklch(0.18 0.015 50);
 
-  /* Muted: warm tan */
-  --muted: oklch(0.94 0.022 88);
-  --muted-foreground: oklch(0.46 0.04 60);
+  /* Muted: barely-there warm gray */
+  --muted: oklch(0.93 0.012 85);
+  --muted-foreground: oklch(0.50 0.03 60);
 
-  /* Accent: vivid beet red – the most important crop */
-  --accent: oklch(0.48 0.21 22);
-  --accent-foreground: oklch(0.985 0.016 88);
+  /* Accent: dusty beet rose – warm, not screaming red */
+  --accent: oklch(0.52 0.12 22);
+  --accent-foreground: oklch(0.975 0.010 85);
 
-  --destructive: oklch(0.55 0.22 25);
+  --destructive: oklch(0.57 0.16 25);
 
-  /* Borders: near-black – PostHog signature bold outlines */
-  --border: oklch(0.11 0.018 50);
-  --input: oklch(0.94 0.022 88);
-  --ring: oklch(0.35 0.16 145);
+  /* Borders: dark charcoal, not pure black */
+  --border: oklch(0.25 0.015 50);
+  --input: oklch(0.93 0.012 85);
+  --ring: oklch(0.40 0.10 145);
 
-  /* Square corners – PostHog aesthetic */
   --radius: 0.2rem;
 
-  --sidebar: oklch(0.94 0.022 88);
-  --sidebar-foreground: oklch(0.11 0.018 50);
-  --sidebar-primary: oklch(0.35 0.16 145);
-  --sidebar-primary-foreground: oklch(0.985 0.016 88);
-  --sidebar-accent: oklch(0.88 0.19 90);
-  --sidebar-accent-foreground: oklch(0.11 0.018 50);
-  --sidebar-border: oklch(0.11 0.018 50);
-  --sidebar-ring: oklch(0.35 0.16 145);
+  --sidebar: oklch(0.93 0.012 85);
+  --sidebar-foreground: oklch(0.18 0.015 50);
+  --sidebar-primary: oklch(0.40 0.10 145);
+  --sidebar-primary-foreground: oklch(0.975 0.010 85);
+  --sidebar-accent: oklch(0.90 0.08 88);
+  --sidebar-accent-foreground: oklch(0.18 0.015 50);
+  --sidebar-border: oklch(0.25 0.015 50);
+  --sidebar-ring: oklch(0.40 0.10 145);
 }
 
 .dark {
-  /* Night at Schrute Farms – deep forest darkness */
-  --background: oklch(0.12 0.028 145);
-  --foreground: oklch(0.95 0.018 88);
+  /* Night at Schrute Farms – comfortable dark, not cave-black */
+  --background: oklch(0.17 0.018 145);
+  --foreground: oklch(0.92 0.012 85);
 
-  --card: oklch(0.16 0.032 145);
-  --card-foreground: oklch(0.95 0.018 88);
+  --card: oklch(0.21 0.020 145);
+  --card-foreground: oklch(0.92 0.012 85);
 
-  --popover: oklch(0.16 0.032 145);
-  --popover-foreground: oklch(0.95 0.018 88);
+  --popover: oklch(0.21 0.020 145);
+  --popover-foreground: oklch(0.92 0.012 85);
 
-  /* Lighter green for dark contrast */
-  --primary: oklch(0.64 0.17 145);
-  --primary-foreground: oklch(0.11 0.018 50);
+  /* Lighter sage green for dark mode */
+  --primary: oklch(0.60 0.11 145);
+  --primary-foreground: oklch(0.17 0.018 145);
 
-  /* Mustard stays punchy in dark */
-  --secondary: oklch(0.70 0.16 90);
-  --secondary-foreground: oklch(0.11 0.018 50);
+  /* Warm straw in dark */
+  --secondary: oklch(0.65 0.09 88);
+  --secondary-foreground: oklch(0.17 0.018 145);
 
-  --muted: oklch(0.20 0.028 145);
-  --muted-foreground: oklch(0.65 0.04 80);
+  --muted: oklch(0.24 0.018 145);
+  --muted-foreground: oklch(0.65 0.03 80);
 
-  /* Beet red – vivid in dark */
-  --accent: oklch(0.58 0.19 22);
-  --accent-foreground: oklch(0.95 0.018 88);
+  /* Dusty beet in dark */
+  --accent: oklch(0.58 0.12 22);
+  --accent-foreground: oklch(0.92 0.012 85);
 
-  --destructive: oklch(0.65 0.22 25);
+  --destructive: oklch(0.62 0.16 25);
 
-  /* Borders: visible warm gray in dark */
-  --border: oklch(0.58 0.04 80);
-  --input: oklch(0.20 0.028 145);
-  --ring: oklch(0.64 0.17 145);
+  --border: oklch(0.50 0.025 80);
+  --input: oklch(0.24 0.018 145);
+  --ring: oklch(0.60 0.11 145);
 
-  --sidebar: oklch(0.16 0.032 145);
-  --sidebar-foreground: oklch(0.95 0.018 88);
-  --sidebar-primary: oklch(0.64 0.17 145);
-  --sidebar-primary-foreground: oklch(0.11 0.018 50);
-  --sidebar-accent: oklch(0.70 0.16 90);
-  --sidebar-accent-foreground: oklch(0.11 0.018 50);
-  --sidebar-border: oklch(0.58 0.04 80);
-  --sidebar-ring: oklch(0.64 0.17 145);
+  --sidebar: oklch(0.21 0.020 145);
+  --sidebar-foreground: oklch(0.92 0.012 85);
+  --sidebar-primary: oklch(0.60 0.11 145);
+  --sidebar-primary-foreground: oklch(0.17 0.018 145);
+  --sidebar-accent: oklch(0.65 0.09 88);
+  --sidebar-accent-foreground: oklch(0.17 0.018 145);
+  --sidebar-border: oklch(0.50 0.025 80);
+  --sidebar-ring: oklch(0.60 0.11 145);
 }
 
 @theme inline {
