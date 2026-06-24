@@ -15,16 +15,22 @@ export default function Header() {
   ] as const;
 
   return (
-    <header className="border-b-4 border-foreground bg-primary text-primary-foreground">
-      <div className="flex flex-row items-center justify-between px-4 py-3 gap-4">
+    <header className="border-b-[3px] border-foreground bg-background">
+      <div className="container mx-auto flex flex-row items-center justify-between px-4 py-3 gap-4">
+
         {/* Brand */}
-        <Link href="/" className="flex flex-col leading-none group">
-          <span className="font-brand text-2xl font-bold tracking-wide uppercase text-primary-foreground group-hover:opacity-80 transition-opacity">
-            Schrutefacts
-          </span>
-          <span className="text-[10px] uppercase tracking-widest text-primary-foreground/70 font-sans">
-            A Schrute Farms Production · Est. 1987
-          </span>
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="flex items-center justify-center w-9 h-9 bg-secondary border-2 border-foreground shadow-pop-sm text-lg shrink-0 transition-transform group-hover:-translate-y-0.5">
+            🌱
+          </div>
+          <div className="leading-none">
+            <span className="font-heading text-lg font-black tracking-tight text-foreground uppercase group-hover:text-primary transition-colors">
+              Schrutefacts
+            </span>
+            <span className="block text-[9px] uppercase tracking-widest text-muted-foreground font-sans">
+              Est. 1987 · Honesdale, PA
+            </span>
+          </div>
         </Link>
 
         {/* Nav */}
@@ -36,10 +42,10 @@ export default function Header() {
                 key={to}
                 href={to}
                 className={[
-                  "px-3 py-1.5 text-sm font-bold uppercase tracking-wide border-2 transition-colors",
+                  "px-3 py-1.5 text-sm font-bold uppercase tracking-wide border-2 transition-all",
                   isActive
-                    ? "bg-primary-foreground text-primary border-primary-foreground"
-                    : "border-transparent text-primary-foreground hover:bg-primary-foreground/15 hover:border-primary-foreground/40",
+                    ? "bg-primary text-primary-foreground border-foreground shadow-pop-sm"
+                    : "border-transparent text-foreground hover:bg-secondary hover:border-foreground",
                 ].join(" ")}
               >
                 {label}
