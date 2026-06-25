@@ -6,104 +6,103 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ─── Schrute Farms / The Office color palette ────────────────────────────── */
-/* Light mode: warm parchment, forest green, beet red, mustard gold            */
-/* Dark mode: Night at Schrute Farms – deep forest, moonlit cream              */
+/* ─── Schrute Farms "Beet Punk" palette ───────────────────────────────────── */
+/* PostHog-inspired: warm cream base, vivid saturated accents, bold black      */
+/* Light: Dunder Mifflin parchment + punchy beet/green/mustard                 */
+/* Dark:  Night at Schrute Farms – deep forest with moonlit highlights          */
 
 :root {
-  /* Warm parchment cream background – like old Dunder Mifflin paper */
-  --background: oklch(0.955 0.035 88);
-  --foreground: oklch(0.13 0.04 50);
+  /* Warm off-white – easy on the eyes */
+  --background: oklch(0.975 0.010 85);
+  --foreground: oklch(0.18 0.015 50);
 
-  /* Cards sit on the same cream, no gap */
-  --card: oklch(0.97 0.028 90);
-  --card-foreground: oklch(0.13 0.04 50);
+  --card: oklch(0.985 0.008 85);
+  --card-foreground: oklch(0.18 0.015 50);
 
-  --popover: oklch(0.97 0.028 90);
-  --popover-foreground: oklch(0.13 0.04 50);
+  --popover: oklch(0.985 0.008 85);
+  --popover-foreground: oklch(0.18 0.015 50);
 
-  /* Primary: Schrute Farms forest green */
-  --primary: oklch(0.36 0.11 140);
-  --primary-foreground: oklch(0.955 0.035 88);
+  /* Primary: muted Schrute Farms green – sage, not neon */
+  --primary: oklch(0.40 0.10 145);
+  --primary-foreground: oklch(0.975 0.010 85);
 
-  /* Secondary: mustard / sunflower gold */
-  --secondary: oklch(0.72 0.14 87);
-  --secondary-foreground: oklch(0.13 0.04 50);
+  /* Secondary: soft warm straw – not mustard-blast */
+  --secondary: oklch(0.90 0.08 88);
+  --secondary-foreground: oklch(0.18 0.015 50);
 
-  /* Muted: light tan for subtle backgrounds */
-  --muted: oklch(0.91 0.025 85);
-  --muted-foreground: oklch(0.45 0.05 60);
+  /* Muted: barely-there warm gray */
+  --muted: oklch(0.93 0.012 85);
+  --muted-foreground: oklch(0.50 0.03 60);
 
-  /* Accent: beet red – the most important crop */
-  --accent: oklch(0.40 0.14 22);
-  --accent-foreground: oklch(0.955 0.035 88);
+  /* Accent: dusty beet rose – warm, not screaming red */
+  --accent: oklch(0.52 0.12 22);
+  --accent-foreground: oklch(0.975 0.010 85);
 
-  --destructive: oklch(0.55 0.20 25);
+  --destructive: oklch(0.57 0.16 25);
 
-  /* Borders: thick dark brown-black, PostHog-style bold outlines */
-  --border: oklch(0.22 0.04 50);
-  --input: oklch(0.91 0.025 85);
-  --ring: oklch(0.36 0.11 140);
+  /* Borders: dark charcoal, not pure black */
+  --border: oklch(0.25 0.015 50);
+  --input: oklch(0.93 0.012 85);
+  --ring: oklch(0.40 0.10 145);
 
-  /* Very small radius – nearly square corners like PostHog */
-  --radius: 0.15rem;
+  --radius: 0.2rem;
 
-  --sidebar: oklch(0.91 0.025 85);
-  --sidebar-foreground: oklch(0.13 0.04 50);
-  --sidebar-primary: oklch(0.36 0.11 140);
-  --sidebar-primary-foreground: oklch(0.955 0.035 88);
-  --sidebar-accent: oklch(0.72 0.14 87);
-  --sidebar-accent-foreground: oklch(0.13 0.04 50);
-  --sidebar-border: oklch(0.22 0.04 50);
-  --sidebar-ring: oklch(0.36 0.11 140);
+  --sidebar: oklch(0.93 0.012 85);
+  --sidebar-foreground: oklch(0.18 0.015 50);
+  --sidebar-primary: oklch(0.40 0.10 145);
+  --sidebar-primary-foreground: oklch(0.975 0.010 85);
+  --sidebar-accent: oklch(0.90 0.08 88);
+  --sidebar-accent-foreground: oklch(0.18 0.015 50);
+  --sidebar-border: oklch(0.25 0.015 50);
+  --sidebar-ring: oklch(0.40 0.10 145);
 }
 
 .dark {
-  /* Night at Schrute Farms – deep forest darkness */
-  --background: oklch(0.14 0.03 145);
-  --foreground: oklch(0.94 0.03 87);
+  /* Night at Schrute Farms – comfortable dark, not cave-black */
+  --background: oklch(0.17 0.018 145);
+  --foreground: oklch(0.92 0.012 85);
 
-  --card: oklch(0.18 0.035 140);
-  --card-foreground: oklch(0.94 0.03 87);
+  --card: oklch(0.21 0.020 145);
+  --card-foreground: oklch(0.92 0.012 85);
 
-  --popover: oklch(0.18 0.035 140);
-  --popover-foreground: oklch(0.94 0.03 87);
+  --popover: oklch(0.21 0.020 145);
+  --popover-foreground: oklch(0.92 0.012 85);
 
-  /* Lighter green for contrast in dark mode */
-  --primary: oklch(0.62 0.14 140);
-  --primary-foreground: oklch(0.13 0.04 50);
+  /* Lighter sage green for dark mode */
+  --primary: oklch(0.60 0.11 145);
+  --primary-foreground: oklch(0.17 0.018 145);
 
-  /* Deeper mustard in dark */
-  --secondary: oklch(0.55 0.13 87);
-  --secondary-foreground: oklch(0.94 0.03 87);
+  /* Warm straw in dark */
+  --secondary: oklch(0.65 0.09 88);
+  --secondary-foreground: oklch(0.17 0.018 145);
 
-  --muted: oklch(0.22 0.03 140);
-  --muted-foreground: oklch(0.68 0.04 80);
+  --muted: oklch(0.24 0.018 145);
+  --muted-foreground: oklch(0.65 0.03 80);
 
-  /* Beet red stays rich in dark */
-  --accent: oklch(0.52 0.16 22);
-  --accent-foreground: oklch(0.94 0.03 87);
+  /* Dusty beet in dark */
+  --accent: oklch(0.58 0.12 22);
+  --accent-foreground: oklch(0.92 0.012 85);
 
-  --destructive: oklch(0.65 0.20 25);
+  --destructive: oklch(0.62 0.16 25);
 
-  /* Borders in dark: lighter brown so they're visible */
-  --border: oklch(0.55 0.04 80);
-  --input: oklch(0.22 0.03 140);
-  --ring: oklch(0.62 0.14 140);
+  --border: oklch(0.50 0.025 80);
+  --input: oklch(0.24 0.018 145);
+  --ring: oklch(0.60 0.11 145);
 
-  --sidebar: oklch(0.18 0.035 140);
-  --sidebar-foreground: oklch(0.94 0.03 87);
-  --sidebar-primary: oklch(0.62 0.14 140);
-  --sidebar-primary-foreground: oklch(0.13 0.04 50);
-  --sidebar-accent: oklch(0.55 0.13 87);
-  --sidebar-accent-foreground: oklch(0.94 0.03 87);
-  --sidebar-border: oklch(0.55 0.04 80);
-  --sidebar-ring: oklch(0.62 0.14 140);
+  --sidebar: oklch(0.21 0.020 145);
+  --sidebar-foreground: oklch(0.92 0.012 85);
+  --sidebar-primary: oklch(0.60 0.11 145);
+  --sidebar-primary-foreground: oklch(0.17 0.018 145);
+  --sidebar-accent: oklch(0.65 0.09 88);
+  --sidebar-accent-foreground: oklch(0.17 0.018 145);
+  --sidebar-border: oklch(0.50 0.025 80);
+  --sidebar-ring: oklch(0.60 0.11 145);
 }
 
 @theme inline {
-  /* Geist Sans for body, Special Elite for brand display */
-  --font-sans: var(--font-geist-sans), "Helvetica Neue", sans-serif;
+  /* DM Sans for body, Syne for headings, Special Elite for Dwight's voice */
+  --font-sans: var(--font-dm-sans), "Helvetica Neue", sans-serif;
+  --font-heading: var(--font-syne), "Helvetica Neue", sans-serif;
   --font-mono: var(--font-geist-mono), "Courier New", monospace;
   --font-brand: var(--font-special-elite), "Courier New", serif;
 
@@ -158,15 +157,34 @@
   }
 }
 
-/* ─── Schrute Farms utility classes ─────────────────────────────────────────── */
+/* ─── Beet Punk utility classes ──────────────────────────────────────────── */
 @layer utilities {
-  /* Bold PostHog-style panel with thick border */
-  .schrute-panel {
-    @apply border-2 border-foreground bg-card p-6;
+  /* PostHog-signature offset box shadows */
+  .shadow-pop {
+    box-shadow: 4px 4px 0 var(--color-foreground);
+  }
+  .shadow-pop-sm {
+    box-shadow: 2px 2px 0 var(--color-foreground);
+  }
+  .shadow-pop-lg {
+    box-shadow: 6px 6px 0 var(--color-foreground);
   }
 
-  /* FACT: callout styling */
-  .fact-callout {
-    @apply border-l-4 border-accent bg-muted pl-4 py-3;
+  /* Cards that lift on hover then press on active */
+  .hover-pop {
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+  }
+  .hover-pop:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 5px 5px 0 var(--color-foreground);
+  }
+  .hover-pop:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--color-foreground);
+  }
+
+  /* Floating label sticker – positioned above card top edge */
+  .label-sticker {
+    @apply absolute -top-3 left-5 bg-foreground text-background text-[10px] font-bold uppercase tracking-widest px-3 py-1;
   }
 }
