@@ -35,6 +35,7 @@
   "devDependencies": {
     "@schrutefacts/config": "workspace:*",
     "@types/node": "22.13.14",
+    "@xarc/run": "2.3.0",
     "oxfmt": "0.53.0",
     "oxlint": "1.68.0",
     "turbo": "2.9.16",
