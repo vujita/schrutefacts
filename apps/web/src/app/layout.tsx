@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, Geist_Mono, Special_Elite, Syne } from "next/font/google";
+import { Bebas_Neue, DM_Sans, Geist_Mono, VT323 } from "next/font/google";
 
 import "../index.css";
 import Header from "@/components/header";
@@ -10,9 +10,10 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas-neue",
   subsets: ["latin"],
+  weight: "400",
 });
 
 const geistMono = Geist_Mono({
@@ -20,8 +21,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const specialElite = Special_Elite({
-  variable: "--font-special-elite",
+const vt323 = VT323({
+  variable: "--font-vt323",
   subsets: ["latin"],
   weight: "400",
 });
@@ -40,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${dmSans.variable} ${syne.variable} ${geistMono.variable} ${specialElite.variable} antialiased`}
+        className={`${dmSans.variable} ${bebasNeue.variable} ${geistMono.variable} ${vt323.variable} antialiased`}
       >
         <Providers>
           <div className="grid grid-rows-[auto_1fr] min-h-svh">
