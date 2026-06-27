@@ -6,105 +6,107 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ─── Schrute Farms "Beet Punk" palette ───────────────────────────────────── */
-/* PostHog-inspired: warm cream base, vivid saturated accents, bold black      */
-/* Light: Dunder Mifflin parchment + punchy beet/green/mustard                 */
-/* Dark:  Night at Schrute Farms – deep forest with moonlit highlights          */
+/* ─── Schrute Farms "Beet Punk" — Retro 90s Edition ──────────────────────── */
+/* Windows 95 teal meets PostHog punch: vivid cyan-teal primary,              */
+/* hot magenta accent, amber gold secondary, pure-black borders               */
+/* Light: bright CRT-warm white base with saturated jewel-tone accents        */
+/* Dark:  deep IBM navy terminal – neon glow on dark background               */
 
 :root {
-  /* Warm off-white – easy on the eyes */
-  --background: oklch(0.975 0.010 85);
-  --foreground: oklch(0.18 0.015 50);
+  /* CRT-warm near-white – not sterile, slightly warm */
+  --background: oklch(0.97 0.004 85);
+  --foreground: oklch(0.06 0.008 280);
 
-  --card: oklch(0.985 0.008 85);
-  --card-foreground: oklch(0.18 0.015 50);
+  --card: oklch(0.99 0.002 85);
+  --card-foreground: oklch(0.06 0.008 280);
 
-  --popover: oklch(0.985 0.008 85);
-  --popover-foreground: oklch(0.18 0.015 50);
+  --popover: oklch(0.99 0.002 85);
+  --popover-foreground: oklch(0.06 0.008 280);
 
-  /* Primary: muted Schrute Farms green – sage, not neon */
-  --primary: oklch(0.40 0.10 145);
-  --primary-foreground: oklch(0.975 0.010 85);
+  /* Primary: Windows 95/98 teal – the iconic 90s color */
+  --primary: oklch(0.40 0.14 195);
+  --primary-foreground: oklch(0.99 0 0);
 
-  /* Secondary: soft warm straw – not mustard-blast */
-  --secondary: oklch(0.90 0.08 88);
-  --secondary-foreground: oklch(0.18 0.015 50);
+  /* Secondary: amber/gold – warm, chunky, 90s flyer energy */
+  --secondary: oklch(0.87 0.16 87);
+  --secondary-foreground: oklch(0.06 0.008 280);
 
-  /* Muted: barely-there warm gray */
-  --muted: oklch(0.93 0.012 85);
-  --muted-foreground: oklch(0.50 0.03 60);
+  /* Muted: light cool-gray, like a 90s beige PC tower */
+  --muted: oklch(0.92 0.005 220);
+  --muted-foreground: oklch(0.42 0.015 280);
 
-  /* Accent: dusty beet rose – warm, not screaming red */
-  --accent: oklch(0.52 0.12 22);
-  --accent-foreground: oklch(0.975 0.010 85);
+  /* Accent: hot magenta/fuchsia – very 90s, very loud */
+  --accent: oklch(0.52 0.23 340);
+  --accent-foreground: oklch(0.99 0 0);
 
-  --destructive: oklch(0.57 0.16 25);
+  --destructive: oklch(0.55 0.22 27);
 
-  /* Borders: dark charcoal, not pure black */
-  --border: oklch(0.25 0.015 50);
-  --input: oklch(0.93 0.012 85);
-  --ring: oklch(0.40 0.10 145);
+  /* Borders: near-pure black for maximum contrast */
+  --border: oklch(0.06 0.008 280);
+  --input: oklch(0.92 0.005 220);
+  --ring: oklch(0.40 0.14 195);
 
-  --radius: 0.2rem;
+  /* Sharp corners – no soft rounding in this decade */
+  --radius: 0rem;
 
-  --sidebar: oklch(0.93 0.012 85);
-  --sidebar-foreground: oklch(0.18 0.015 50);
-  --sidebar-primary: oklch(0.40 0.10 145);
-  --sidebar-primary-foreground: oklch(0.975 0.010 85);
-  --sidebar-accent: oklch(0.90 0.08 88);
-  --sidebar-accent-foreground: oklch(0.18 0.015 50);
-  --sidebar-border: oklch(0.25 0.015 50);
-  --sidebar-ring: oklch(0.40 0.10 145);
+  --sidebar: oklch(0.92 0.005 220);
+  --sidebar-foreground: oklch(0.06 0.008 280);
+  --sidebar-primary: oklch(0.40 0.14 195);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.87 0.16 87);
+  --sidebar-accent-foreground: oklch(0.06 0.008 280);
+  --sidebar-border: oklch(0.06 0.008 280);
+  --sidebar-ring: oklch(0.40 0.14 195);
 }
 
 .dark {
-  /* Night at Schrute Farms – comfortable dark, not cave-black */
-  --background: oklch(0.17 0.018 145);
-  --foreground: oklch(0.92 0.012 85);
+  /* Deep IBM-blue terminal – like staring into a CRT at 2 AM */
+  --background: oklch(0.11 0.030 240);
+  --foreground: oklch(0.94 0.010 85);
 
-  --card: oklch(0.21 0.020 145);
-  --card-foreground: oklch(0.92 0.012 85);
+  --card: oklch(0.15 0.035 240);
+  --card-foreground: oklch(0.94 0.010 85);
 
-  --popover: oklch(0.21 0.020 145);
-  --popover-foreground: oklch(0.92 0.012 85);
+  --popover: oklch(0.15 0.035 240);
+  --popover-foreground: oklch(0.94 0.010 85);
 
-  /* Lighter sage green for dark mode */
-  --primary: oklch(0.60 0.11 145);
-  --primary-foreground: oklch(0.17 0.018 145);
+  /* Bright neon teal – glowing on the dark */
+  --primary: oklch(0.62 0.16 195);
+  --primary-foreground: oklch(0.06 0.008 280);
 
-  /* Warm straw in dark */
-  --secondary: oklch(0.65 0.09 88);
-  --secondary-foreground: oklch(0.17 0.018 145);
+  /* Amber in dark – like phosphor-monitor warmth */
+  --secondary: oklch(0.64 0.14 87);
+  --secondary-foreground: oklch(0.06 0.008 280);
 
-  --muted: oklch(0.24 0.018 145);
-  --muted-foreground: oklch(0.65 0.03 80);
+  --muted: oklch(0.18 0.028 240);
+  --muted-foreground: oklch(0.58 0.028 240);
 
-  /* Dusty beet in dark */
-  --accent: oklch(0.58 0.12 22);
-  --accent-foreground: oklch(0.92 0.012 85);
+  /* Neon magenta – hot and glowing */
+  --accent: oklch(0.62 0.23 340);
+  --accent-foreground: oklch(0.99 0 0);
 
-  --destructive: oklch(0.62 0.16 25);
+  --destructive: oklch(0.60 0.22 27);
 
-  --border: oklch(0.50 0.025 80);
-  --input: oklch(0.24 0.018 145);
-  --ring: oklch(0.60 0.11 145);
+  --border: oklch(0.52 0.035 240);
+  --input: oklch(0.18 0.028 240);
+  --ring: oklch(0.62 0.16 195);
 
-  --sidebar: oklch(0.21 0.020 145);
-  --sidebar-foreground: oklch(0.92 0.012 85);
-  --sidebar-primary: oklch(0.60 0.11 145);
-  --sidebar-primary-foreground: oklch(0.17 0.018 145);
-  --sidebar-accent: oklch(0.65 0.09 88);
-  --sidebar-accent-foreground: oklch(0.17 0.018 145);
-  --sidebar-border: oklch(0.50 0.025 80);
-  --sidebar-ring: oklch(0.60 0.11 145);
+  --sidebar: oklch(0.15 0.035 240);
+  --sidebar-foreground: oklch(0.94 0.010 85);
+  --sidebar-primary: oklch(0.62 0.16 195);
+  --sidebar-primary-foreground: oklch(0.06 0.008 280);
+  --sidebar-accent: oklch(0.64 0.14 87);
+  --sidebar-accent-foreground: oklch(0.06 0.008 280);
+  --sidebar-border: oklch(0.52 0.035 240);
+  --sidebar-ring: oklch(0.62 0.16 195);
 }
 
 @theme inline {
-  /* DM Sans for body, Syne for headings, Special Elite for Dwight's voice */
+  /* Bebas Neue for headings (bold condensed 90s poster), VT323 for retro terminal brand */
   --font-sans: var(--font-dm-sans), "Helvetica Neue", sans-serif;
-  --font-heading: var(--font-syne), "Helvetica Neue", sans-serif;
+  --font-heading: var(--font-bebas-neue), "Impact", sans-serif;
   --font-mono: var(--font-geist-mono), "Courier New", monospace;
-  --font-brand: var(--font-special-elite), "Courier New", serif;
+  --font-brand: var(--font-vt323), "Courier New", monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -134,13 +136,13 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --radius-sm: calc(var(--radius) - 2px);
-  --radius-md: var(--radius);
-  --radius-lg: calc(var(--radius) + 2px);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --radius-sm: calc(var(--radius));
+  --radius-md: calc(var(--radius));
+  --radius-lg: calc(var(--radius));
+  --radius-xl: calc(var(--radius));
+  --radius-2xl: calc(var(--radius));
+  --radius-3xl: calc(var(--radius));
+  --radius-4xl: calc(var(--radius));
 }
 
 @layer base {
@@ -157,9 +159,9 @@
   }
 }
 
-/* ─── Beet Punk utility classes ──────────────────────────────────────────── */
+/* ─── Retro 90s utility classes ───────────────────────────────────────────── */
 @layer utilities {
-  /* PostHog-signature offset box shadows */
+  /* PostHog-signature offset box shadows — bigger and bolder for the 90s */
   .shadow-pop {
     box-shadow: 4px 4px 0 var(--color-foreground);
   }
