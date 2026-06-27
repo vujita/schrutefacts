@@ -35,8 +35,8 @@
   --muted: oklch(0.90 0.014 245);
   --muted-foreground: oklch(0.48 0.028 258);
 
-  /* Accent: warm amber/caramel – soft, not harsh, like old manila folders */
-  --accent: oklch(0.55 0.110 48);
+  /* Accent: muted cornflower/slate blue – 90s corporate, pairs with DM navy */
+  --accent: oklch(0.48 0.14 252);
   --accent-foreground: oklch(0.97 0.006 245);
 
   --destructive: oklch(0.52 0.160 27);
@@ -81,9 +81,9 @@
   --muted: oklch(0.18 0.035 260);
   --muted-foreground: oklch(0.56 0.030 250);
 
-  /* Warm amber glow – like a desk lamp at 11 PM in the Scranton office */
-  --accent: oklch(0.62 0.110 50);
-  --accent-foreground: oklch(0.12 0.038 260);
+  /* Brighter cornflower – stands out on the dark navy background */
+  --accent: oklch(0.58 0.15 252);
+  --accent-foreground: oklch(0.97 0.006 245);
 
   --destructive: oklch(0.58 0.180 27);
 
