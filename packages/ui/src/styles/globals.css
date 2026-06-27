@@ -6,99 +6,99 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ─── Schrute Farms "Beet Punk" — Retro 90s Edition ──────────────────────── */
-/* Windows 95 teal meets PostHog punch: vivid cyan-teal primary,              */
-/* hot magenta accent, amber gold secondary, pure-black borders               */
-/* Light: bright CRT-warm white base with saturated jewel-tone accents        */
-/* Dark:  deep IBM navy terminal – neon glow on dark background               */
+/* ─── Schrute Farms "Beet Punk" — Dunder Mifflin Retro Edition ───────────── */
+/* 90s structure meets Dunder Mifflin paper-company navy:                     */
+/* cool blue-gray base, DM navy primary, soft amber accent, muted saturation  */
+/* Light: pale office-paper gray with navy authority                          */
+/* Dark:  late-night at the Scranton branch – deep navy with warm amber glow  */
 
 :root {
-  /* CRT-warm near-white – not sterile, slightly warm */
-  --background: oklch(0.97 0.004 85);
-  --foreground: oklch(0.06 0.008 280);
+  /* Pale blue-gray – like Dunder Mifflin letterhead paper */
+  --background: oklch(0.95 0.010 245);
+  --foreground: oklch(0.14 0.035 260);
 
-  --card: oklch(0.99 0.002 85);
-  --card-foreground: oklch(0.06 0.008 280);
+  --card: oklch(0.97 0.006 245);
+  --card-foreground: oklch(0.14 0.035 260);
 
-  --popover: oklch(0.99 0.002 85);
-  --popover-foreground: oklch(0.06 0.008 280);
+  --popover: oklch(0.97 0.006 245);
+  --popover-foreground: oklch(0.14 0.035 260);
 
-  /* Primary: Windows 95/98 teal – the iconic 90s color */
-  --primary: oklch(0.40 0.14 195);
-  --primary-foreground: oklch(0.99 0 0);
+  /* Primary: Dunder Mifflin navy – the paper company's authority color */
+  --primary: oklch(0.28 0.090 258);
+  --primary-foreground: oklch(0.97 0.006 245);
 
-  /* Secondary: amber/gold – warm, chunky, 90s flyer energy */
-  --secondary: oklch(0.87 0.16 87);
-  --secondary-foreground: oklch(0.06 0.008 280);
+  /* Secondary: soft cool gray – office-supply catalog vibes */
+  --secondary: oklch(0.86 0.020 245);
+  --secondary-foreground: oklch(0.14 0.035 260);
 
-  /* Muted: light cool-gray, like a 90s beige PC tower */
-  --muted: oklch(0.92 0.005 220);
-  --muted-foreground: oklch(0.42 0.015 280);
+  /* Muted: barely-there blue-gray */
+  --muted: oklch(0.90 0.014 245);
+  --muted-foreground: oklch(0.48 0.028 258);
 
-  /* Accent: hot magenta/fuchsia – very 90s, very loud */
-  --accent: oklch(0.52 0.23 340);
-  --accent-foreground: oklch(0.99 0 0);
+  /* Accent: warm amber/caramel – soft, not harsh, like old manila folders */
+  --accent: oklch(0.55 0.110 48);
+  --accent-foreground: oklch(0.97 0.006 245);
 
-  --destructive: oklch(0.55 0.22 27);
+  --destructive: oklch(0.52 0.160 27);
 
-  /* Borders: near-pure black for maximum contrast */
-  --border: oklch(0.06 0.008 280);
-  --input: oklch(0.92 0.005 220);
-  --ring: oklch(0.40 0.14 195);
+  /* Borders: deep navy – authority without pure black */
+  --border: oklch(0.18 0.040 260);
+  --input: oklch(0.90 0.014 245);
+  --ring: oklch(0.28 0.090 258);
 
-  /* Sharp corners – no soft rounding in this decade */
+  /* Sharp corners – 90s means business */
   --radius: 0rem;
 
-  --sidebar: oklch(0.92 0.005 220);
-  --sidebar-foreground: oklch(0.06 0.008 280);
-  --sidebar-primary: oklch(0.40 0.14 195);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.87 0.16 87);
-  --sidebar-accent-foreground: oklch(0.06 0.008 280);
-  --sidebar-border: oklch(0.06 0.008 280);
-  --sidebar-ring: oklch(0.40 0.14 195);
+  --sidebar: oklch(0.90 0.014 245);
+  --sidebar-foreground: oklch(0.14 0.035 260);
+  --sidebar-primary: oklch(0.28 0.090 258);
+  --sidebar-primary-foreground: oklch(0.97 0.006 245);
+  --sidebar-accent: oklch(0.86 0.020 245);
+  --sidebar-accent-foreground: oklch(0.14 0.035 260);
+  --sidebar-border: oklch(0.18 0.040 260);
+  --sidebar-ring: oklch(0.28 0.090 258);
 }
 
 .dark {
-  /* Deep IBM-blue terminal – like staring into a CRT at 2 AM */
-  --background: oklch(0.11 0.030 240);
-  --foreground: oklch(0.94 0.010 85);
+  /* Late night at the Scranton branch – deep DM navy background */
+  --background: oklch(0.12 0.038 260);
+  --foreground: oklch(0.93 0.008 245);
 
-  --card: oklch(0.15 0.035 240);
-  --card-foreground: oklch(0.94 0.010 85);
+  --card: oklch(0.17 0.042 260);
+  --card-foreground: oklch(0.93 0.008 245);
 
-  --popover: oklch(0.15 0.035 240);
-  --popover-foreground: oklch(0.94 0.010 85);
+  --popover: oklch(0.17 0.042 260);
+  --popover-foreground: oklch(0.93 0.008 245);
 
-  /* Bright neon teal – glowing on the dark */
-  --primary: oklch(0.62 0.16 195);
-  --primary-foreground: oklch(0.06 0.008 280);
+  /* Brighter navy blue – readable on the dark background */
+  --primary: oklch(0.60 0.110 258);
+  --primary-foreground: oklch(0.12 0.038 260);
 
-  /* Amber in dark – like phosphor-monitor warmth */
-  --secondary: oklch(0.64 0.14 87);
-  --secondary-foreground: oklch(0.06 0.008 280);
+  /* Muted blue-gray in dark */
+  --secondary: oklch(0.52 0.060 250);
+  --secondary-foreground: oklch(0.93 0.008 245);
 
-  --muted: oklch(0.18 0.028 240);
-  --muted-foreground: oklch(0.58 0.028 240);
+  --muted: oklch(0.18 0.035 260);
+  --muted-foreground: oklch(0.56 0.030 250);
 
-  /* Neon magenta – hot and glowing */
-  --accent: oklch(0.62 0.23 340);
-  --accent-foreground: oklch(0.99 0 0);
+  /* Warm amber glow – like a desk lamp at 11 PM in the Scranton office */
+  --accent: oklch(0.62 0.110 50);
+  --accent-foreground: oklch(0.12 0.038 260);
 
-  --destructive: oklch(0.60 0.22 27);
+  --destructive: oklch(0.58 0.180 27);
 
-  --border: oklch(0.52 0.035 240);
-  --input: oklch(0.18 0.028 240);
-  --ring: oklch(0.62 0.16 195);
+  --border: oklch(0.48 0.040 258);
+  --input: oklch(0.18 0.035 260);
+  --ring: oklch(0.60 0.110 258);
 
-  --sidebar: oklch(0.15 0.035 240);
-  --sidebar-foreground: oklch(0.94 0.010 85);
-  --sidebar-primary: oklch(0.62 0.16 195);
-  --sidebar-primary-foreground: oklch(0.06 0.008 280);
-  --sidebar-accent: oklch(0.64 0.14 87);
-  --sidebar-accent-foreground: oklch(0.06 0.008 280);
-  --sidebar-border: oklch(0.52 0.035 240);
-  --sidebar-ring: oklch(0.62 0.16 195);
+  --sidebar: oklch(0.17 0.042 260);
+  --sidebar-foreground: oklch(0.93 0.008 245);
+  --sidebar-primary: oklch(0.60 0.110 258);
+  --sidebar-primary-foreground: oklch(0.12 0.038 260);
+  --sidebar-accent: oklch(0.52 0.060 250);
+  --sidebar-accent-foreground: oklch(0.93 0.008 245);
+  --sidebar-border: oklch(0.48 0.040 258);
+  --sidebar-ring: oklch(0.60 0.110 258);
 }
 
 @theme inline {
@@ -161,7 +161,7 @@
 
 /* ─── Retro 90s utility classes ───────────────────────────────────────────── */
 @layer utilities {
-  /* PostHog-signature offset box shadows — bigger and bolder for the 90s */
+  /* PostHog-signature offset box shadows */
   .shadow-pop {
     box-shadow: 4px 4px 0 var(--color-foreground);
   }
