@@ -9,58 +9,11 @@
 /* ─── Schrute Farms "Beet Punk" — Dunder Mifflin Retro Edition ───────────── */
 /* 90s structure meets Dunder Mifflin paper-company navy:                     */
 /* cool blue-gray base, DM navy primary, soft amber accent, muted saturation  */
-/* Light: pale office-paper gray with navy authority                          */
-/* Dark:  late-night at the Scranton branch – deep navy with warm amber glow  */
+/* Light: 90s PC desktop gray                                                  */
+/* Dark: CRT office blue-gray for high-contrast night mode                     */
 
 :root {
-  /* Pale blue-gray – like Dunder Mifflin letterhead paper */
-  --background: oklch(0.95 0.010 245);
-  --foreground: oklch(0.14 0.035 260);
-
-  --card: oklch(0.97 0.006 245);
-  --card-foreground: oklch(0.14 0.035 260);
-
-  --popover: oklch(0.97 0.006 245);
-  --popover-foreground: oklch(0.14 0.035 260);
-
-  /* Primary: Dunder Mifflin navy – the paper company's authority color */
-  --primary: oklch(0.28 0.090 258);
-  --primary-foreground: oklch(0.97 0.006 245);
-
-  /* Secondary: soft cool gray – office-supply catalog vibes */
-  --secondary: oklch(0.86 0.020 245);
-  --secondary-foreground: oklch(0.14 0.035 260);
-
-  /* Muted: barely-there blue-gray */
-  --muted: oklch(0.90 0.014 245);
-  --muted-foreground: oklch(0.48 0.028 258);
-
-  /* Accent: muted cornflower/slate blue – 90s corporate, pairs with DM navy */
-  --accent: oklch(0.48 0.14 252);
-  --accent-foreground: oklch(0.97 0.006 245);
-
-  --destructive: oklch(0.52 0.160 27);
-
-  /* Borders: deep navy – authority without pure black */
-  --border: oklch(0.18 0.040 260);
-  --input: oklch(0.90 0.014 245);
-  --ring: oklch(0.28 0.090 258);
-
-  /* Sharp corners – 90s means business */
-  --radius: 0rem;
-
-  --sidebar: oklch(0.90 0.014 245);
-  --sidebar-foreground: oklch(0.14 0.035 260);
-  --sidebar-primary: oklch(0.28 0.090 258);
-  --sidebar-primary-foreground: oklch(0.97 0.006 245);
-  --sidebar-accent: oklch(0.86 0.020 245);
-  --sidebar-accent-foreground: oklch(0.14 0.035 260);
-  --sidebar-border: oklch(0.18 0.040 260);
-  --sidebar-ring: oklch(0.28 0.090 258);
-}
-
-.dark {
-  /* 90s PC gray mode: classic desktop gray instead of near-black navy */
+  /* Default light mode: 90s PC gray desktop */
   --background: oklch(0.88 0.010 250);
   --foreground: oklch(0.18 0.030 258);
 
@@ -88,14 +41,57 @@
   --input: oklch(0.96 0.004 248);
   --ring: oklch(0.45 0.090 258);
 
+  /* Sharp corners – 90s means business */
+  --radius: 0rem;
+
   --sidebar: oklch(0.92 0.010 248);
   --sidebar-foreground: oklch(0.22 0.032 258);
   --sidebar-primary: oklch(0.40 0.095 258);
   --sidebar-primary-foreground: oklch(0.97 0.006 245);
   --sidebar-accent: oklch(0.78 0.020 248);
   --sidebar-accent-foreground: oklch(0.22 0.032 258);
-  --sidebar-border: oklch(0.36 0.045 258);
+  --sidebar-border: oklch(0.30 0.042 258);
   --sidebar-ring: oklch(0.45 0.090 258);
+}
+
+.dark {
+  /* Dark mode: CRT office blue-gray, readable and on-brand */
+  --background: oklch(0.18 0.028 255);
+  --foreground: oklch(0.94 0.010 245);
+
+  --card: oklch(0.24 0.032 255);
+  --card-foreground: oklch(0.94 0.010 245);
+
+  --popover: oklch(0.26 0.030 255);
+  --popover-foreground: oklch(0.94 0.010 245);
+
+  /* Dark-mode blue is intentionally deeper than light mode */
+  --primary: oklch(0.62 0.095 246);
+  --primary-foreground: oklch(0.16 0.028 255);
+
+  --secondary: oklch(0.31 0.032 248);
+  --secondary-foreground: oklch(0.94 0.010 245);
+
+  --muted: oklch(0.30 0.032 255);
+  --muted-foreground: oklch(0.74 0.020 250);
+
+  --accent: oklch(0.56 0.100 242);
+  --accent-foreground: oklch(0.14 0.026 255);
+
+  --destructive: oklch(0.62 0.170 27);
+
+  --border: oklch(0.52 0.045 248);
+  --input: oklch(0.28 0.030 255);
+  --ring: oklch(0.64 0.100 246);
+
+  --sidebar: oklch(0.22 0.032 255);
+  --sidebar-foreground: oklch(0.94 0.010 245);
+  --sidebar-primary: oklch(0.62 0.095 246);
+  --sidebar-primary-foreground: oklch(0.16 0.028 255);
+  --sidebar-accent: oklch(0.31 0.032 248);
+  --sidebar-accent-foreground: oklch(0.94 0.010 245);
+  --sidebar-border: oklch(0.52 0.045 248);
+  --sidebar-ring: oklch(0.64 0.100 246);
 }
 
 @theme inline {

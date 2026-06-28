@@ -1,4 +1,5 @@
 "use client";
+import { Sprout } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -20,8 +21,8 @@ export default function Header() {
 
         {/* Brand */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="flex items-center justify-center w-9 h-9 bg-secondary border-2 border-foreground shadow-pop-sm text-lg shrink-0 transition-transform group-hover:-translate-y-0.5">
-            🌱
+          <div className="flex items-center justify-center w-9 h-9 bg-primary border-2 border-foreground text-primary-foreground shadow-pop-sm shrink-0 transition-transform group-hover:-translate-y-0.5">
+            <Sprout className="h-4 w-4" />
           </div>
           <div className="leading-none">
             <span className="font-heading text-lg font-black tracking-tight text-foreground uppercase group-hover:text-primary transition-colors">
