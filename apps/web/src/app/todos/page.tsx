@@ -9,8 +9,6 @@ import { useState, type FormEvent } from "react";
 
 import { trpc } from "@/utils/trpc";
 
-type TodoId = number;
-
 export default function TodosPage() {
   const [newTodoText, setNewTodoText] = useState("");
 
@@ -42,10 +40,12 @@ export default function TodosPage() {
   return (
     <main className="overflow-y-auto">
       <div className="container mx-auto max-w-2xl px-4 py-10 space-y-6">
-
         {/* Header */}
         <section className="relative border-[3px] border-foreground bg-secondary shadow-pop-lg overflow-hidden">
-          <div aria-hidden className="absolute -right-4 -bottom-4 text-[100px] leading-none opacity-[0.08] select-none pointer-events-none">
+          <div
+            aria-hidden
+            className="absolute -right-4 -bottom-4 text-[100px] leading-none opacity-[0.08] select-none pointer-events-none"
+          >
             📋
           </div>
           <div className="relative p-6 md:p-8">
@@ -54,7 +54,8 @@ export default function TodosPage() {
               <span>Schrute Farms · Official Task Log</span>
             </div>
             <h1 className="font-heading text-5xl md:text-6xl font-black uppercase leading-none tracking-tight text-foreground">
-              Schrute<br />
+              Schrute
+              <br />
               <span className="text-primary">Duties</span>
             </h1>
             <p className="mt-3 text-sm text-foreground/90">
@@ -68,7 +69,9 @@ export default function TodosPage() {
           <div className="border-[3px] border-foreground bg-card p-4 shadow-pop-sm">
             <div className="flex justify-between text-xs font-bold uppercase tracking-widest mb-2">
               <span className="font-heading">Mission Progress</span>
-              <span>{completedCount}/{totalCount} completed</span>
+              <span>
+                {completedCount}/{totalCount} completed
+              </span>
             </div>
             <div className="h-4 bg-muted border-2 border-foreground overflow-hidden">
               <div
@@ -98,11 +101,7 @@ export default function TodosPage() {
             disabled={createMutation.isPending || !newTodoText.trim()}
             className="border-2 border-foreground font-heading font-black uppercase tracking-wide shrink-0 shadow-pop-sm hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
           >
-            {createMutation.isPending ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              "Assign"
-            )}
+            {createMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : "Assign"}
           </Button>
         </form>
 
@@ -132,9 +131,7 @@ export default function TodosPage() {
                   key={todo.id}
                   className={[
                     "flex items-center justify-between px-4 py-3.5 gap-3 transition-colors hover:bg-muted/50",
-                    idx !== (todos.data?.length ?? 0) - 1
-                      ? "border-b-2 border-foreground/15"
-                      : "",
+                    idx !== (todos.data?.length ?? 0) - 1 ? "border-b-2 border-foreground/15" : "",
                   ].join(" ")}
                 >
                   <div className="flex items-center gap-3 flex-1 min-w-0">
@@ -176,7 +173,6 @@ export default function TodosPage() {
         <p className="text-xs text-foreground/80 text-center font-heading font-bold uppercase tracking-wide">
           Failure to complete duties will be noted in your permanent record.
         </p>
-
       </div>
     </main>
   );
