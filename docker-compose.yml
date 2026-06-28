@@ -1,38 +1,53 @@
 name: schrutefacts
 
 services:
+  migrate:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      target: builder
+    command: sh -c "cd packages/db && pnpm db:migrate"
+    environment:
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-password}@postgres:5432/schrutefacts
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
   web:
     build:
       context: .
       dockerfile: apps/web/Dockerfile
     init: true
     ports:
-      - "3001:3001"
-    env_file:
-      - apps/web/.env
+      - "${WEB_PORT:-3001}:3001"
     environment:
-      BETTER_AUTH_URL: http://localhost:3001
-      CORS_ORIGIN: http://localhost:3001
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:-UBgLVZReZRnzP1yOapSVsFoCrouGudVC}
+      BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:${WEB_PORT:-3001}}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:${WEB_PORT:-3001}}
       DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD:-password}@postgres:5432/schrutefacts
     depends_on:
-      postgres:
-        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
     restart: unless-stopped
 
   postgres:
-    image: postgres
+    image: postgres:17
     container_name: schrutefacts-postgres
     environment:
       POSTGRES_DB: schrutefacts
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT:-5432}:5432"
     volumes:
-      - ./.data/postgres:/var/lib/postgresql
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
     restart: unless-stopped
+
+volumes:
+  postgres_data:
