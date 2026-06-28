@@ -57,7 +57,7 @@ export default function TodosPage() {
               Schrute<br />
               <span className="text-primary">Duties</span>
             </h1>
-            <p className="mt-3 text-sm text-foreground/70">
+            <p className="mt-3 text-sm text-foreground/90">
               Every task is critical. Every incomplete task is a personal failure.
             </p>
           </div>
@@ -91,7 +91,7 @@ export default function TodosPage() {
             onChange={(e) => setNewTodoText(e.target.value)}
             placeholder="Assign a new duty…"
             disabled={createMutation.isPending}
-            className="border-2 border-foreground bg-card placeholder:text-muted-foreground font-sans shadow-pop-sm focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all"
+            className="border-2 border-foreground bg-card placeholder:text-foreground/65 font-sans shadow-pop-sm focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all"
           />
           <Button
             type="submit"
@@ -109,7 +109,7 @@ export default function TodosPage() {
         {/* Task list */}
         <div className="border-[3px] border-foreground bg-card shadow-pop">
           {todos.isLoading ? (
-            <div className="flex justify-center items-center gap-3 py-14 text-muted-foreground">
+            <div className="flex justify-center items-center gap-3 py-14 text-foreground/85">
               <Loader2 className="h-5 w-5 animate-spin" />
               <span className="text-sm font-heading font-bold uppercase tracking-wide">
                 Consulting the beet ledger…
@@ -118,10 +118,10 @@ export default function TodosPage() {
           ) : todos.data?.length === 0 ? (
             <div className="py-14 text-center">
               <p className="text-5xl mb-3">📋</p>
-              <p className="font-heading font-black text-sm uppercase tracking-wide text-muted-foreground">
+              <p className="font-heading font-black text-sm uppercase tracking-wide text-foreground/85">
                 No duties assigned.
               </p>
-              <p className="text-xs text-muted-foreground mt-1">
+              <p className="text-sm text-foreground/75 mt-1">
                 This is either excellent news or suspicious.
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function TodosPage() {
                       className={[
                         "text-sm cursor-pointer truncate",
                         todo.completed
-                          ? "line-through text-muted-foreground"
+                          ? "line-through text-foreground/60"
                           : "font-medium text-foreground",
                       ].join(" ")}
                     >
@@ -173,7 +173,7 @@ export default function TodosPage() {
           )}
         </div>
 
-        <p className="text-xs text-muted-foreground text-center font-heading font-bold uppercase tracking-wide">
+        <p className="text-xs text-foreground/80 text-center font-heading font-bold uppercase tracking-wide">
           Failure to complete duties will be noted in your permanent record.
         </p>
 

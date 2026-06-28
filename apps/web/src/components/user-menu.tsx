@@ -25,7 +25,7 @@ export default function UserMenu() {
   if (!session) {
     return (
       <Link href="/login">
-        <Button variant="outline" className="border-2 border-foreground font-bold uppercase tracking-wide text-sm hover:bg-secondary transition-colors">
+        <Button variant="outline" className="border-2 border-foreground bg-card text-foreground font-bold uppercase tracking-wide text-sm hover:bg-secondary transition-colors">
           Sign In
         </Button>
       </Link>
@@ -38,7 +38,7 @@ export default function UserMenu() {
         render={
           <Button
             variant="outline"
-            className="border-2 border-foreground font-bold uppercase tracking-wide text-sm hover:bg-secondary transition-colors"
+            className="border-2 border-foreground bg-card text-foreground font-bold uppercase tracking-wide text-sm hover:bg-secondary transition-colors"
           />
         }
       >

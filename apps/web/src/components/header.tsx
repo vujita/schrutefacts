@@ -15,7 +15,7 @@ export default function Header() {
   ] as const;
 
   return (
-    <header className="border-b-[3px] border-foreground bg-background">
+    <header className="border-b-[3px] border-foreground bg-card">
       <div className="container mx-auto flex flex-row items-center justify-between px-4 py-3 gap-4">
 
         {/* Brand */}
@@ -27,7 +27,7 @@ export default function Header() {
             <span className="font-heading text-lg font-black tracking-tight text-foreground uppercase group-hover:text-primary transition-colors">
               Schrutefacts
             </span>
-            <span className="block text-[9px] uppercase tracking-widest text-muted-foreground font-sans">
+            <span className="block text-[9px] uppercase tracking-widest text-foreground/80 font-sans">
               Est. 1987 · Honesdale, PA
             </span>
           </div>
@@ -45,7 +45,7 @@ export default function Header() {
                   "px-3 py-1.5 text-sm font-bold uppercase tracking-wide border-2 transition-all",
                   isActive
                     ? "bg-primary text-primary-foreground border-foreground shadow-pop-sm"
-                    : "border-transparent text-foreground hover:bg-secondary hover:border-foreground",
+                    : "border-transparent text-foreground/90 hover:bg-secondary hover:border-foreground/80",
                 ].join(" ")}
               >
                 {label}
