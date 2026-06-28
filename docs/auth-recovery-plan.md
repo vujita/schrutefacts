@@ -17,12 +17,12 @@ This is the most standard path and better-auth makes it straightforward to wire 
 
 ### Step 1: Pick an Email Provider
 
-| Provider | Free Tier | Next.js Friendly | Notes |
-|---|---|---|---|
-| **Resend** | 3,000 emails/mo | Yes (official SDK) | Best DX, built for devs |
-| **Postmark** | 100/mo trial | Yes | Highest deliverability |
-| **SendGrid** | 100/day | Yes | Widely used, more config |
-| **Nodemailer + SMTP** | n/a | Any SMTP works | Good for self-hosted/dev |
+| Provider              | Free Tier       | Next.js Friendly   | Notes                    |
+| --------------------- | --------------- | ------------------ | ------------------------ |
+| **Resend**            | 3,000 emails/mo | Yes (official SDK) | Best DX, built for devs  |
+| **Postmark**          | 100/mo trial    | Yes                | Highest deliverability   |
+| **SendGrid**          | 100/day         | Yes                | Widely used, more config |
+| **Nodemailer + SMTP** | n/a             | Any SMTP works     | Good for self-hosted/dev |
 
 **Recommendation: Resend.** Dead-simple API, great Next.js docs, free tier is generous enough to start.
 
@@ -33,6 +33,7 @@ pnpm add resend --filter @schrutefacts/auth
 ```
 
 Add to `packages/env/src/server.ts`:
+
 ```ts
 RESEND_API_KEY: z.string().min(1),
 FROM_EMAIL: z.string().email().default("noreply@schrutefacts.com"),
@@ -63,6 +64,7 @@ emailAndPassword: {
 ### Step 4: Add a Reset Password UI Page
 
 Create `apps/web/src/app/forgot-password/page.tsx` — a form that calls:
+
 ```ts
 import { authClient } from "@/lib/auth-client";
 
@@ -70,6 +72,7 @@ await authClient.requestPasswordReset({ email });
 ```
 
 And a reset form at `apps/web/src/app/reset-password/page.tsx` that reads the `?token=` param from the email link and calls:
+
 ```ts
 await authClient.resetPassword({ token, newPassword });
 ```
@@ -159,14 +162,14 @@ better-auth will link the OAuth account to an existing user by matching email, s
 
 ## Recommended Implementation Order
 
-| Priority | Task | Effort | Unlocks |
-|---|---|---|---|
-| 1 | Set up Resend account + API key | ~15 min | All email flows |
-| 2 | Add `sendResetPassword` callback | ~30 min | Password reset |
-| 3 | Add forgot-password + reset-password pages | ~1–2 hrs | Full reset UX |
-| 4 | Add `emailVerification` plugin | ~30 min | Verified email badge |
-| 5 | Add TOTP 2FA + backup codes | ~2–4 hrs | No-email recovery |
-| 6 | Add Google OAuth | ~1 hr | Social recovery path |
+| Priority | Task                                       | Effort   | Unlocks              |
+| -------- | ------------------------------------------ | -------- | -------------------- |
+| 1        | Set up Resend account + API key            | ~15 min  | All email flows      |
+| 2        | Add `sendResetPassword` callback           | ~30 min  | Password reset       |
+| 3        | Add forgot-password + reset-password pages | ~1–2 hrs | Full reset UX        |
+| 4        | Add `emailVerification` plugin             | ~30 min  | Verified email badge |
+| 5        | Add TOTP 2FA + backup codes                | ~2–4 hrs | No-email recovery    |
+| 6        | Add Google OAuth                           | ~1 hr    | Social recovery path |
 
 ---
 
