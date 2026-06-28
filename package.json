@@ -26,7 +26,10 @@
     "docker:down": "docker compose down",
     "docker:clean": "docker compose down -v",
     "docker:logs": "docker compose logs -f",
-    "check": "oxlint && oxfmt --write"
+    "check": "oxlint && oxfmt --write",
+    "lint": "oxlint",
+    "lint-staged": "lint-staged",
+    "prepare": "husky"
   },
   "dependencies": {
     "@schrutefacts/env": "workspace:*",
@@ -37,10 +40,19 @@
     "@schrutefacts/config": "workspace:*",
     "@types/node": "22.13.14",
     "@xarc/run": "2.3.0",
+    "husky": "9.1.7",
+    "lint-staged": "17.0.8",
     "oxfmt": "0.53.0",
     "oxlint": "1.68.0",
     "turbo": "2.9.16",
     "typescript": "catalog:"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "pnpm oxfmt --write",
+      "pnpm oxlint --fix --quiet"
+    ],
+    "*.{json,css,md,yml,yaml}": "pnpm oxfmt --write"
   },
   "packageManager": "pnpm@10.24.0"
 }

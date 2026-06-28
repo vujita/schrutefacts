@@ -18,7 +18,6 @@ export default function Header() {
   return (
     <header className="border-b-[3px] border-foreground bg-card">
       <div className="container mx-auto flex flex-row items-center justify-between px-4 py-3 gap-4">
-
         {/* Brand */}
         <Link href="/" className="flex items-center gap-2.5 group">
           <div className="flex items-center justify-center w-9 h-9 bg-primary border-2 border-foreground text-primary-foreground shadow-pop-sm shrink-0 transition-transform group-hover:-translate-y-0.5">

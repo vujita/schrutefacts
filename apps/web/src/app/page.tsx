@@ -20,7 +20,6 @@ export default function Home() {
   return (
     <main className="overflow-y-auto">
       <div className="container mx-auto max-w-4xl px-4 py-10 space-y-6">
-
         {/* ── Hero ── */}
         <section className="relative border-[3px] border-foreground bg-secondary shadow-pop-lg overflow-hidden">
           {/* Decorative oversized emoji watermark */}
@@ -48,9 +47,8 @@ export default function Home() {
               Bears. Beets. Battlestar Galactica.
             </p>
             <p className="text-sm text-foreground/70 max-w-lg leading-relaxed">
-              The world&apos;s foremost repository of Schrute family wisdom,
-              beet-based intelligence, and hard facts. Not opinions.{" "}
-              <em>Facts.</em>
+              The world&apos;s foremost repository of Schrute family wisdom, beet-based
+              intelligence, and hard facts. Not opinions. <em>Facts.</em>
             </p>
           </div>
         </section>
@@ -69,13 +67,12 @@ export default function Home() {
 
         {/* ── Feature Cards ── */}
         <div className="grid md:grid-cols-3 gap-5">
-
           <div className="border-[3px] border-foreground bg-primary text-primary-foreground p-6 flex flex-col gap-3 shadow-pop hover-pop">
             <div className="text-4xl">🐻</div>
             <h3 className="font-heading text-xl font-black uppercase">Bears</h3>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
-              There are 8 species of bears. Black bears. Grizzly bears. Polar
-              bears. False black bears. All dangerous. All real.
+              There are 8 species of bears. Black bears. Grizzly bears. Polar bears. False black
+              bears. All dangerous. All real.
             </p>
           </div>
 
@@ -83,8 +80,8 @@ export default function Home() {
             <div className="text-4xl">🌱</div>
             <h3 className="font-heading text-xl font-black uppercase">Beets</h3>
             <p className="text-sm text-secondary-foreground/80 leading-relaxed">
-              Schrute Farms produces 15,000 lbs of beets annually. Red, yellow,
-              and chioggia. Superior to every other crop.
+              Schrute Farms produces 15,000 lbs of beets annually. Red, yellow, and chioggia.
+              Superior to every other crop.
             </p>
           </div>
 
@@ -92,11 +89,10 @@ export default function Home() {
             <div className="text-4xl">🚀</div>
             <h3 className="font-heading text-xl font-black uppercase">Battlestar</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The greatest science fiction program ever produced. If you
-              disagree, you are wrong. That is a fact.
+              The greatest science fiction program ever produced. If you disagree, you are wrong.
+              That is a fact.
             </p>
           </div>
-
         </div>
 
         {/* ── Network Status ── */}
@@ -105,9 +101,7 @@ export default function Home() {
             <div
               className={[
                 "h-3 w-3 rounded-full border-2 border-foreground shrink-0",
-                healthCheck.data
-                  ? "bg-primary animate-pulse"
-                  : "bg-destructive",
+                healthCheck.data ? "bg-primary animate-pulse" : "bg-destructive",
               ].join(" ")}
             />
             <span className="text-sm font-bold uppercase tracking-wide">
@@ -130,7 +124,6 @@ export default function Home() {
           </span>
           <span>All facts guaranteed accurate · D. K. Schrute</span>
         </div>
-
       </div>
     </main>
   );

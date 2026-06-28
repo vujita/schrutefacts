@@ -11,10 +11,12 @@ export default function LoginPage() {
   return (
     <main className="overflow-y-auto">
       <div className="container mx-auto max-w-md px-4 py-10 space-y-6">
-
         {/* Header */}
         <div className="relative border-[3px] border-foreground bg-primary text-primary-foreground p-6 shadow-pop-lg overflow-hidden">
-          <div aria-hidden className="absolute -right-4 -bottom-4 text-[100px] leading-none opacity-[0.08] select-none pointer-events-none">
+          <div
+            aria-hidden
+            className="absolute -right-4 -bottom-4 text-[100px] leading-none opacity-[0.08] select-none pointer-events-none"
+          >
             🔐
           </div>
           <div className="relative">
@@ -37,7 +39,6 @@ export default function LoginPage() {
         ) : (
           <SignUpForm onSwitchToSignIn={() => setShowSignIn(true)} />
         )}
-
       </div>
     </main>
   );
