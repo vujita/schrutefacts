@@ -43,7 +43,6 @@ services:
 
   postgres:
     image: postgres:17
-    container_name: schrutefacts-postgres
     environment:
       POSTGRES_DB: schrutefacts
       POSTGRES_USER: postgres
