@@ -22,7 +22,7 @@
     "db:clean": "docker compose down -v",
     "docker:build": "docker compose build",
     "docker:up": "docker compose up -d --build",
-    "docker:dev": "docker compose up --build web",
+    "docker:dev": "docker compose up --build --watch web",
     "docker:down": "docker compose down",
     "docker:clean": "docker compose down -v",
     "docker:logs": "docker compose logs -f",

@@ -30,6 +30,16 @@ services:
       migrate:
         condition: service_completed_successfully
     restart: unless-stopped
+    develop:
+      watch:
+        - action: rebuild
+          path: ./apps/web
+        - action: rebuild
+          path: ./packages
+        - action: rebuild
+          path: ./package.json
+        - action: rebuild
+          path: ./pnpm-lock.yaml
 
   postgres:
     image: postgres:17
