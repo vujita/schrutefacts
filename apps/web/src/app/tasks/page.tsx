@@ -5,37 +5,63 @@ import { Checkbox } from "@schrutefacts/ui/components/checkbox";
 import { Input } from "@schrutefacts/ui/components/input";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { Loader2, Trash2 } from "lucide-react";
-import { useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState, type FormEvent } from "react";
 
+import { authClient } from "@/lib/auth-client";
 import { trpc } from "@/utils/trpc";
 
-export default function TodosPage() {
-  const [newTodoText, setNewTodoText] = useState("");
+export default function TasksPage() {
+  const router = useRouter();
+  const { data: session, isPending: sessionPending } = authClient.useSession();
+  const [newTaskText, setNewTaskText] = useState("");
 
-  const todos = useQuery(trpc.todo.getAll.queryOptions());
+  useEffect(() => {
+    if (!sessionPending && !session) {
+      router.replace("/login");
+    }
+  }, [session, sessionPending, router]);
+
+  const tasks = useQuery({
+    ...trpc.task.getAll.queryOptions(),
+    enabled: !!session,
+  });
   const createMutation = useMutation(
-    trpc.todo.create.mutationOptions({
+    trpc.task.create.mutationOptions({
       onSuccess: () => {
-        todos.refetch();
-        setNewTodoText("");
+        tasks.refetch();
+        setNewTaskText("");
       },
     }),
   );
   const toggleMutation = useMutation(
-    trpc.todo.toggle.mutationOptions({ onSuccess: () => todos.refetch() }),
+    trpc.task.toggle.mutationOptions({ onSuccess: () => tasks.refetch() }),
   );
   const deleteMutation = useMutation(
-    trpc.todo.delete.mutationOptions({ onSuccess: () => todos.refetch() }),
+    trpc.task.delete.mutationOptions({ onSuccess: () => tasks.refetch() }),
   );
 
-  const handleAddTodo = (e: FormEvent<HTMLFormElement>) => {
+  const handleAddTask = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (newTodoText.trim()) createMutation.mutate({ text: newTodoText });
+    if (newTaskText.trim()) createMutation.mutate({ text: newTaskText });
   };
 
-  const completedCount = todos.data?.filter((t) => t.completed).length ?? 0;
-  const totalCount = todos.data?.length ?? 0;
+  const completedCount = tasks.data?.filter((t) => t.completed).length ?? 0;
+  const totalCount = tasks.data?.length ?? 0;
   const progress = totalCount > 0 ? (completedCount / totalCount) * 100 : 0;
+
+  if (sessionPending || !session) {
+    return (
+      <main className="overflow-y-auto">
+        <div className="flex justify-center items-center gap-3 py-32 text-foreground/85">
+          <Loader2 className="h-5 w-5 animate-spin" />
+          <span className="text-sm font-heading font-bold uppercase tracking-wide">
+            Verifying credentials…
+          </span>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="overflow-y-auto">
@@ -88,17 +114,17 @@ export default function TodosPage() {
         )}
 
         {/* Add form */}
-        <form onSubmit={handleAddTodo} className="flex gap-2">
+        <form onSubmit={handleAddTask} className="flex gap-2">
           <Input
-            value={newTodoText}
-            onChange={(e) => setNewTodoText(e.target.value)}
+            value={newTaskText}
+            onChange={(e) => setNewTaskText(e.target.value)}
             placeholder="Assign a new duty…"
             disabled={createMutation.isPending}
             className="border-2 border-foreground bg-card placeholder:text-foreground/65 font-sans shadow-pop-sm focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all"
           />
           <Button
             type="submit"
-            disabled={createMutation.isPending || !newTodoText.trim()}
+            disabled={createMutation.isPending || !newTaskText.trim()}
             className="border-2 border-foreground font-heading font-black uppercase tracking-wide shrink-0 shadow-pop-sm hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] transition-all"
           >
             {createMutation.isPending ? <Loader2 className="h-4 w-4 animate-spin" /> : "Assign"}
@@ -107,14 +133,14 @@ export default function TodosPage() {
 
         {/* Task list */}
         <div className="border-[3px] border-foreground bg-card shadow-pop">
-          {todos.isLoading ? (
+          {tasks.isLoading ? (
             <div className="flex justify-center items-center gap-3 py-14 text-foreground/85">
               <Loader2 className="h-5 w-5 animate-spin" />
               <span className="text-sm font-heading font-bold uppercase tracking-wide">
                 Consulting the beet ledger…
               </span>
             </div>
-          ) : todos.data?.length === 0 ? (
+          ) : tasks.data?.length === 0 ? (
             <div className="py-14 text-center">
               <p className="text-5xl mb-3">📋</p>
               <p className="font-heading font-black text-sm uppercase tracking-wide text-foreground/85">
@@ -126,39 +152,39 @@ export default function TodosPage() {
             </div>
           ) : (
             <ul>
-              {todos.data?.map((todo, idx) => (
+              {tasks.data?.map((t, idx) => (
                 <li
-                  key={todo.id}
+                  key={t.id}
                   className={[
                     "flex items-center justify-between px-4 py-3.5 gap-3 transition-colors hover:bg-muted/50",
-                    idx !== (todos.data?.length ?? 0) - 1 ? "border-b-2 border-foreground/15" : "",
+                    idx !== (tasks.data?.length ?? 0) - 1 ? "border-b-2 border-foreground/15" : "",
                   ].join(" ")}
                 >
                   <div className="flex items-center gap-3 flex-1 min-w-0">
                     <Checkbox
-                      checked={todo.completed}
+                      checked={t.completed}
                       onCheckedChange={() =>
-                        toggleMutation.mutate({ id: todo.id, completed: !todo.completed })
+                        toggleMutation.mutate({ id: t.id, completed: !t.completed })
                       }
-                      id={`todo-${todo.id}`}
+                      id={`task-${t.id}`}
                       className="border-2 border-foreground shrink-0"
                     />
                     <label
-                      htmlFor={`todo-${todo.id}`}
+                      htmlFor={`task-${t.id}`}
                       className={[
                         "text-sm cursor-pointer truncate",
-                        todo.completed
+                        t.completed
                           ? "line-through text-foreground/60"
                           : "font-medium text-foreground",
                       ].join(" ")}
                     >
-                      {todo.text}
+                      {t.text}
                     </label>
                   </div>
                   <Button
                     variant="ghost"
                     size="icon"
-                    onClick={() => deleteMutation.mutate({ id: todo.id })}
+                    onClick={() => deleteMutation.mutate({ id: t.id })}
                     aria-label="Delete duty"
                     className="shrink-0 hover:bg-destructive/10 hover:text-destructive"
                   >
