@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev --port 3001",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "check-types": "tsgo --noEmit"
   },
   "dependencies": {
     "@schrutefacts/api": "workspace:*",
@@ -35,6 +36,7 @@
     "@types/node": "20.19.43",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "@typescript/native-preview": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   }

@@ -10,6 +10,7 @@
     }
   },
   "scripts": {
+    "check-types": "tsgo --noEmit",
     "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
     "db:studio": "drizzle-kit studio",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@schrutefacts/config": "workspace:*",
     "@types/pg": "catalog:",
+    "@typescript/native-preview": "catalog:",
     "drizzle-kit": "0.31.8",
     "typescript": "catalog:"
   }

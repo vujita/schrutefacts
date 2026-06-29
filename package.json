@@ -39,6 +39,7 @@
   "devDependencies": {
     "@schrutefacts/config": "workspace:*",
     "@types/node": "22.13.14",
+    "@typescript/native-preview": "catalog:",
     "@xarc/run": "2.3.0",
     "husky": "9.1.7",
     "lint-staged": "17.0.8",
