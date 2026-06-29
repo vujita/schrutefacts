@@ -6,7 +6,9 @@
     "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
-    "check-types": "tsgo --noEmit"
+    "check-types": "tsgo --noEmit",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install --with-deps chromium"
   },
   "dependencies": {
     "@schrutefacts/api": "workspace:*",
@@ -30,6 +32,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@playwright/test": "catalog:",
     "@schrutefacts/config": "workspace:*",
     "@tailwindcss/postcss": "4.1.18",
     "@tanstack/react-query-devtools": "5.91.1",
