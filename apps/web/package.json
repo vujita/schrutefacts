@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev --port 3001",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "check-types": "tsgo --noEmit",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install --with-deps chromium"
   },
   "dependencies": {
     "@schrutefacts/api": "workspace:*",
@@ -29,12 +32,14 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@playwright/test": "catalog:",
     "@schrutefacts/config": "workspace:*",
     "@tailwindcss/postcss": "4.1.18",
     "@tanstack/react-query-devtools": "5.91.1",
     "@types/node": "20.19.43",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
+    "@typescript/native-preview": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   }

@@ -29,6 +29,8 @@
     "check": "oxlint && oxfmt --write",
     "lint": "oxlint",
     "lint-staged": "lint-staged",
+    "test:e2e": "turbo test:e2e",
+    "test:all": "bash scripts/test-all.sh",
     "prepare": "husky"
   },
   "dependencies": {
@@ -39,6 +41,7 @@
   "devDependencies": {
     "@schrutefacts/config": "workspace:*",
     "@types/node": "22.13.14",
+    "@typescript/native-preview": "catalog:",
     "@xarc/run": "2.3.0",
     "husky": "9.1.7",
     "lint-staged": "17.0.8",
