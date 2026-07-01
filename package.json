@@ -29,6 +29,8 @@
     "check": "oxlint && oxfmt --write",
     "lint": "oxlint",
     "lint-staged": "lint-staged",
+    "test:e2e": "turbo test:e2e",
+    "test:all": "bash scripts/test-all.sh",
     "prepare": "husky"
   },
   "dependencies": {
